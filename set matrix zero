@@ -1,0 +1,96 @@
+The whole row and column of the cell in a matrix which contains zero becomes zero
+************************************
+
+
+  void setZeroes(vector<vector<int>>& matrix) 
+    {
+        int m= matrix.size();
+        int n=matrix[0].size();
+        
+        int x=1;int y=1;
+//         check for 1 row
+        for(int r=0;r<n;r++)
+        {
+            if(matrix[0][r]==0)
+            {
+                x=0;
+                break;
+            }
+      }
+//         check for 1 coloumn
+           for(int c=0;c<m;c++)
+        {
+            if(matrix[c][0]==0)
+            {
+                y=0;
+                break;
+            }
+      }
+//         traversing whole matrix for zeroes
+        
+       for(int i=1;i<m;i++)
+       {
+           for(int j=1;j<n;j++)
+           {
+                if(matrix[i][j]==0)
+                {
+                    matrix[i][0]=0;
+                    matrix[0][j]=0;
+                }
+           
+           }
+       }
+        
+//         making zereos acc to 1 row 
+        for(int r=1;r<n;r++)
+        {
+            if(matrix[0][r]==0)
+            {
+               
+                for(int c=0;c<m;c++)
+                {
+                    matrix[c][r]=0;
+                }
+            }
+        }
+//       making zereos acc to 1 row 
+         for(int c=1;c<m;c++)
+        {
+            if(matrix[c][0]==0)
+            {
+               
+                for(int r=0;r<n;r++)
+                {
+                    matrix[c][r]=0;
+                }
+            }
+        }
+//     finally for 1 row
+        if(x==0)
+        {
+            for(int i=0;i<n;i++)
+            {
+                matrix[0][i]=0;
+            }
+        }
+          if(y==0)
+        {
+            for(int i=0;i<m;i++)
+            {
+                matrix[i][0]=0;
+            }
+      }   
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+************************************
