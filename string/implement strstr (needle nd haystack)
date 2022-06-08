@@ -1,0 +1,31 @@
+return the index of starting element of needle in haystack(if needle lenght is empty return 0,if needle is not present in haystack return -1)
+*****************************************************
+   O(n*m) n=haystack.size(),m=needle.size();
+   
+   
+   ******************************************
+   int strStr(string haystack, string needle) 
+    {
+        if(needle.length()==0)
+            return 0;
+        int j;
+        char c=needle[0];
+        for(int i=0;i<haystack.length();i++)
+        {
+           if(haystack[i]==c)
+           {
+              for( j=1;j<needle.length();j++)
+              {
+                if(haystack[i+j]!=needle[j])
+                      break;
+              }
+               // cout<<haystack[i+j];
+               if(j==(needle.length()))
+                   return i;
+             
+           }
+        }
+        return -1;  
+        
+    }
+    ****************************************
