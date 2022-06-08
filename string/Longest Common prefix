@@ -39,6 +39,7 @@ return the longest prefix which every element contains
    strs[0].resize(check+1);
         return strs[0];
     }
+    In this approach instead of returning integer from compare and helper function u can return a string and use one function only O(n^2)time
 
 ***************************************
 
