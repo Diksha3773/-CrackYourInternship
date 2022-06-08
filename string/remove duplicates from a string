@@ -1,0 +1,31 @@
+remove all the duplicates from a given string
+***************************
+	string removeDuplicates(string str) 
+	{
+	    unordered_map<char,int>map;
+	    
+	    int count=0;
+	    for(int i=0;i<str.length();i++)
+	    {
+	        if(map.find(str[i])!=map.end())
+	        {
+	       // cout<<"0";
+	        continue;
+	        }
+	        else
+	        {
+	         map[str[i]]=1;
+	         str[count]=str[i];
+	         count++;
+	        }
+	    }
+
+	    for(int i=count;i<str.length();i++)
+	    {
+	       str[i]=' ';
+	    }
+	    trim_right(str);
+	      return(str);
+	
+	}
+  **************************
