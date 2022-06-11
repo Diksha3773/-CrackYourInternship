@@ -1,0 +1,18 @@
+check if both trees are identical?
+*******************************
+O(n)
+**********
+ bool isSameTree(TreeNode* p, TreeNode* q) {
+      if(!p&&!q)
+          return true;
+        if(!p||!q||p->val!=q->val)
+            return false;
+   bool left=   isSameTree(p->left,q->left);
+    bool right=     isSameTree(p->right,q->right);
+        if(left&&right)
+            return true;
+        else 
+            return false;
+        
+    }
+    ******************************
