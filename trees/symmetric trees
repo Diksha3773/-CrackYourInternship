@@ -1,0 +1,22 @@
+Check if tree is symmetric
+*********************************************
+O(n)
+**************
+ bool check(TreeNode *lefty,TreeNode*righty)
+    {
+        if(lefty==NULL&&righty==NULL)
+            return true;
+        if(lefty==NULL||righty==NULL||lefty->val!=righty->val)
+            return false;
+      bool a=  check(lefty->left,righty->right);
+       bool b= check(lefty->right,righty->left);
+        return (a&&b);
+        
+    }
+    bool isSymmetric(TreeNode* root)
+    {
+        if(root==NULL)
+            return false;
+        return check(root->left,root->right);
+    }
+**************************************
